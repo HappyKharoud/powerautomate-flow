@@ -5,7 +5,9 @@ param(
     [string]$LogFile
 )
 
-$logs = '123'
+$logs = Get-Content -Raw "$LogFile" -Encoding UTF8
+$logs = $logs -replace "`r?`n", "\n"
+
 $body = @{
     hostname = $Hostname
     username = $Username
