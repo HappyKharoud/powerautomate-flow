@@ -2,14 +2,15 @@ param(
     [string]$Hostname,
     [string]$Username,
     [string]$Reason,
-    [string]$Logs
+    [string]$LogFile
 )
 
+$logs = Get-Content -Raw '%LogFile%'
 $body = @{
     hostname = $Hostname
     username = $Username
     reason   = $Reason
-    logs     = $Logs
+    logs     = $logs
 } | ConvertTo-Json -Depth 3
 
 Invoke-RestMethod -Method Post `
