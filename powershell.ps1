@@ -5,7 +5,6 @@ param(
     [string]$LogFile
 )
 
-$logs = Get-Content -Raw "$LogFile"
 $logs = '123'
 $body = @{
     hostname = $Hostname
