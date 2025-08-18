@@ -12,6 +12,7 @@ $body = @{
     hostname = $Hostname
     username = $Username
     reason   = $Reason
+    logs = $logs
 } | ConvertTo-Json -Depth 3
 
 Invoke-RestMethod -Method Post `
