@@ -5,7 +5,7 @@ param(
     [string]$LogFile
 )
 
-$logs = Get-Content -Raw "$LogFile" -Encoding UTF8
+$logs = Get-Content -Raw "$LogFile" -Encoding UTF8 -Tail 70
 $logs = $logs -replace "`r?`n", "\n"
 
 $body = @{
