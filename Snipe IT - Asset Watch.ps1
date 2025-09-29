@@ -49,8 +49,7 @@ $asset = $response.rows[0]
 if ($asset.assigned_to) {
     exit
 } else {
-    Write-Host "Assigned To: [Not assigned]"
     $snipeUserID = getUserID
-    Write-Host "=================== Snipe ID:  $($snipeUserID) ==============="
     assignTo
+
 }
